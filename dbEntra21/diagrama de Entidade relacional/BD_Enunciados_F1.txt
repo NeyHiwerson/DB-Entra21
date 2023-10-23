@@ -1,0 +1,8 @@
+Com o avanço da tecnologia a equipe CLAWER de F1 precisa de um novo sistema para controlar alguns apectos importantes da corrida, sabendo que:
+* Um piloto da equipe CLAWER tem os seus próprios mecânicos de forma exclusiva.
+* O piloto da equipe CLAWER pode ter contratos com outros patrocinadores (além dos patrocinadores da equipe).
+* É necessário um controle dos resultados de cada corrida, precisamos saber a posição do piloto no grid de largada e sua posição final.
+* Para logísta é necessário saber o local de cada corrida, o país e qual hotel será necessário utilizar.
+* Para cada piloto da equipe CLAWER, além dos dados pessoais, é necessário um histórico de suas posições nos campeonatos que participou. Para tanto, faz-se necessário anotar informações sobre cada campeonato: ano, vencedor, vice, pontos dos pilotos.
+* Para fins de "estudos didáticos e estratégicos" precisamos criar um cadastro de Pilotos de outras equipes. É importante que essas informações não sejam guardadas junto com as informações dos pilotos da equipe CLAWER. 
+Para todos os pilotos é necessário ter um controle de sua nacionalidade.

@@ -1,0 +1,14 @@
+A Flora CLAWER é uma rede de floriculturas que tem como objetivo atender todo o mercado nacional no que diz respeito à venda e entrega de flores.
+	 Através desta rede, um cliente pode fazer uma compra de flores em Joinville e pedir para a entrega ser feita em São Paulo. São várias floriculturas espalhadas no Brasil através de um convênio com várias floriculturas em várias cidades do Brasil. Uma floricultura pode atender várias cidades da região. O pedido do cliente, que pode possuir vários tipos de flores, é cadastrado e repassado para uma das floriculturas conveniadas que atendem a cidade, na qual será entregue o pedido. Um pedido de um cliente pode enviar flores de diversos tipos, além de presentes personalizados como chocolates, bichinhos de pelúcia e joias. Elabore um diagrama que contemple os dados necessários a este controle.
+
+Flora CLAWER
+	flor:
+	nome_flor; preco_venda_flor; preco_custo_flor; dt_colheita; validade_dias;
+	Produto:
+	nome_produto; preco_venda_produto; preco_custo_produto, validade_produto;
+	floricultura:
+	nome_floricultura; cidade_floricultura; 
+	cliente:
+	nome_cliente; cpf_cliente; endereço_cliente;
+	pedido:
+	numero_pedido; total_itens_pedido, valor_total_pedido; endereco_entrega_pedido

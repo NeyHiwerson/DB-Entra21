@@ -1,0 +1,152 @@
+SQL - LINGUAGEM DE CONSULTA ESTRUTURADA
+
+Data: 09/10/2023
+Profª Cláudia Werlich
+
+Preparação:
+1. Ative o XAMPP
+2. Entre no localhost
+
+***   UTILIZANDO COMANDOS DO SQL ***
+
+1. CREATE DATABASE - Criar um Banco de Dados
+
+CREATE DATABASE <<nome_do_banco>>;
+Ex.: CREATE DATABASE banco_feliz;
+
+2. Se arrependeu? Quer apagar o BD inteiro?
+DROP DATABASE <<nome_do_banco>>; 
+Ex.:DROP DATABASE banco_feliz;
+
+3. CREATE TABLE - server para criar tabelas:
+CREATE TABLE Vendas ( 
+   ID_Vendas INT, 
+   Curso VARCHAR (100), 
+   Aluno VARCHAR (100), 
+   Estado VARCHAR (100), 
+   Valor DECIMAL (10,2) 
+); 
+4. Esqueceu a Chave Primária?
+Use o comando ALTER TABLE:
+ALTER TABLE nome_tabela 
+ADD PRIMARY KEY (campo); 
+
+Ex.:  ALTER TABLE Vendas 
+      ADD PRIMARY KEY (ID_Vendas); 
+
+5. Inserir registros na tabela: Use o comando INSERT
+ 
+INSERT INTO Vendas (ID_Vendas, Curso, Aluno, Estado, Valor) 
+VALUES   
+(1, 'PHP Básico', '' ,'SC', 120), 
+(2, 'Confeiteiro', 'Lucca' ,'SC', 250), 
+(3, 'Mecânica', 'Martin' ,'SC', 380), 
+(4, 'Bons Modos', 'Ruy' ,'RJ', 10), 
+(5, 'Gastronomia', 'Liana' ,'SP', 1500), 
+(6, 'Técnico TI', 'Amanda' ,'AC', 200); 
+
+6. Criando a Tabela Funcionário:
+CREATE TABLE Funcionario (
+ Id_Funcionario INT Primary Key,
+ nome VARCHAR (120),
+ endereco VARCHAR (100),
+ salario DECIMAL (10,2)
+);
+
+7. Esqueceu um campo? Use o ALTER TABLE
+ ALTER TABLE Funcionario
+ ADD COLUMN cidade VARCHAR (100) NOT NULL AFTER endereco;
+
+8. Insira 10 Registros de Funcionários
+INSERT INTO Funcionario 
+      (Id_Funcionario, nome, endereco, cidade, salario) 
+VALUES   
+(1,'Pedro de Lara' , 'Rua das Flores' ,'São Paulo' ,1000),
+(2,'Bruxa Má' , 'Rua das Pedras' ,'Santo André' ,5000); 
+
+=================================================================
+9. SELECT's --> SELECT (Mostrar, Listar, Selecionar)
+=================================================================
+
+a) Mostre todos os funcionários da tabela funcionario:
+  SELECT *
+  FROM funcionario;
+
+b) Mostre todos os funcionários que ganham a partir de 2000:
+   SELECT *
+   FROM funcionario
+   WHERE salario >= 2000;
+
+c) Listar todos os funcionários que moram numa cidade que começa com
+   a letra S.
+   SELECT nome, cidade
+   FROM funcionario
+   WHERE cargo LIKE 'Professor%';
+
+d) Mostre a soma de todos os salários dos funcionários:
+   SELECT SUM(salario) AS 'Salários dos Funcionários'
+   FROM funcionario;
+
+e) Mostre a soma dos salários do funcionário da cidade de São Paulo.
+  SELECT SUM(salario) AS 'Salários dos Funcionários'
+  FROM funcionario
+  WHERE cidade ='São Paulo';
+
+f) Quantos funcionários foram cadastrados na tabela?
+   SELECT COUNT(Id_funcionario) AS 'Quantidade de Funcionários'
+   FROM funcionario;
+
+g) Qual é o menor salário cadastrado?
+   SELECT MIN(salario)
+   FROM funcionario;
+
+h) Qual é o maior salário cadastrado?
+   SELECT MAX(salario)
+   FROM funcionario;
+
+========================================================
+10. UPDATE - Modificar, alterar
+========================================================
+
+UPDATE Vendas 
+SET Valor = 500 
+WHERE Curso = 'Gastronomia'; 
+
+Desafio:
+
+a. Aumente o salário da tabela funcionario de todos os funcionários 
+em 15%.
+  UPDATE funcionario 
+  SET salario = salario *1.15;
+
+ou faça assim:
+
+UPDATE funcionario
+SET salario = salario + (salario*0.15);
+
+
+b. Diminua o salário de um funcionário (escolha a vítima) em 8%,
+ 
+UPDATE funcionario 
+SET salario = salario - (salario * 0.08)
+WHERE nome ='Bruxa Má';
+
+================================================================
+11. DELETE - Apagar registros da tabela
+================================================================
+
+a) Apagar todos os registros da Venda com Id = 2
+
+DELETE 
+FROM Vendas 
+WHERE ID_Vendas = 2; 
+
+ 
+   
+
+
+
+
+
+
+

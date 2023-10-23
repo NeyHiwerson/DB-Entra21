@@ -1,0 +1,17 @@
+	Após a invasão dos super-heróis nas telas do cinema, o instituto de contenção aos crimes desorganizados resolveram informatizar os seus registros.
+ 	Para isso, você estará incumbido de fazer um sistema para a Liga da Justiça. É necessário cadastrar os super-heróis (super-homem, mulher maravilha, batman, os supergêmeos, aquaman, flash, lanterna verde, etc.…).
+	 Para cada um precisamos de informações básicas (peso, altura, dt nascimento).
+	 Todos os super-heróis possuim diversas habilidades que podem se repetir entre si, para evitar redundância, queremos um cadastro de habilidades.
+	 Precisamos também cadastrar os vilões e cadastrar as maldades praticadas pelos vilões. Essas maldades são “atendidas” pelos super-heróis. Em cada atendimento deverá ser anotado a data e o tempo que demorou para ser solucionado, deve ser anotado como observação (no atendimento) tudo o que o vilão falou, pois será usado mais tarde contra ele, no julgamento final da justiça.
+
+
+Entidades:
+	Super-Herois
+		id; nome; peso; altura; dtNasc;
+	Habilidades
+		id_habilidade; habilidade.
+	Viloes
+		nome; peso; altura; dtNasc;
+	maldades
+		id_maldade; nome_maldade;
+	
