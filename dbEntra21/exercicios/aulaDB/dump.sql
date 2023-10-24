@@ -1,11 +1,11 @@
-/*
-//exercicio do arquivo "sql_roteiro_aula_01"
+
+/* //exercicio do arquivo "sql_roteiro_aula_01" */
 create TABLE Vendas (
 	ID_Vendas int,
-    Curso varchar(100),    
+    Curso varchar(100),
     Aluno varchar(100),
     Estado varchar(100),
-    Valor Decimal(10,2)    
+    Valor Decimal(10,2)
 );
 
 ALTER TABLE Vendas
@@ -135,37 +135,41 @@ VALUES
 (29, 'Kai Havertz', 'Boulevard das Assistências', 'Londres', 'Londres', 'SW1A 1AA', 'UK', 480.00, 0),
 (30, 'Ansu Fati', 'Rua da Juventude', 'Barcelona', 'Barcelona', '08001', 'ES', 470.00, 0);
 */
-/*
-4. Crie as seguintes consultas SQLs:
 
-a) Modifique o campo estado, coloque SC para todos alunos da cidade de Joinville.​
+/* 4. Crie as seguintes consultas SQLs: */
+SELECT * FROM alunos
+
+/* a) Modifique o campo estado, coloque SC para todos alunos da cidade de Joinville.​ */
 UPDATE alunos SET estado = 'SC' WHERE cidade LIKE 'Joinville';
 
-b) Apague todos os registros dos alunos que não são de SC.​
+/* b) Apague todos os registros dos alunos que não são de SC.​ */
 DELETE FROM alunos WHERE estado != 'SC';
 
-c) 'Neymar Jr.' brigou com 'Kylian Mbappé' na escola e os dois ganharam advertência. Atualize a tabela Alunos.​
+/* c) 'Neymar Jr.' brigou com 'Kylian Mbappé' na escola e os dois ganharam advertência. Atualize a tabela Alunos.​ */
 UPDATE alunos SET advertencia = advertencia + 1 WHERE nome LIKE 'Neymar Jr.';
 UPDATE alunos SET advertencia = advertencia + 1 WHERE nome LIKE 'Kylian Mbappé';
 
-d) Houve um aumento na mensalidade de todos os alunos, modifique o campo mensalidade. Dê um aumento de 8%.​
+/* d) Houve um aumento na mensalidade de todos os alunos, modifique o campo mensalidade. Dê um aumento de 8%.​ */
 UPDATE alunos SET mensalidade = mensalidade * 1.08;
 
-e) A partir de hoje todos os alunos que possuem mais de 2 advertências terão um aumento na mensalidade de 15 %.​
+/* e) A partir de hoje todos os alunos que possuem mais de 2 advertências terão um aumento na mensalidade de 15 %.​ */
+UPDATE alunos SET mensalidade = mensalidade * 1.15 WHERE advertencia > 2;
 
-f) Todos os alunos que não possuem advertências ganharão 5 % de desconto na mensalidade.​
+/* f) Todos os alunos que não possuem advertências ganharão 5 % de desconto na mensalidade.​ */
+UPDATE alunos SET mensalidade = mensalidade * 0.95 WHERE advertencia = 0;
 
-g) Dê um desconto de 15 % para todas as alunas que se chamam ​
-   Cláudia.​
+/* g) Dê um desconto de 15 % para todas as alunas que se chamam Cláudia.​ */
+UPDATE alunos SET mensalidade = mensalidade * 0.85 WHERE nome LIKE 'Cláudia';
 
-h) Aumente a mensalidade de todos os alunos que possuem mais de 5 advertências.​
+/* h) Aumente 20% a mensalidade de todos os alunos que possuem mais de 5 advertências.​ */
+UPDATE alunos SET mensalidade = mensalidade * 1.20 WHERE advertencia > 5;
 
-i) Altere o nome do aluno Josué Sampaio para José Sampaio, pois o nome do aluno foi cadastrado errado.​
+/* i) Altere o nome do aluno Josué Sampaio para José Sampaio, pois o nome do aluno foi cadastrado errado.​ */
+UPDATE alunos SET nome = 'José Sampaio' WHERE nome LIKE 'Josué Sampaio';
 
-j) Exclua o aluno José Sampaio pois o mesmo deixou a escola.​
+/* j) Exclua o aluno José Sampaio pois o mesmo deixou a escola.​ */
+DELETE FROM alunos WHERE nome LIKE 'José Sampaio';
 
-l) Devido a pandemia foi necessário aumentar a mensalidade dos a​
-alunos em 6%, altere a tabela.​
-*/
-
-SELECT * FROM alunos
+/* l) Devido a pandemia foi necessário aumentar a mensalidade dos a​
+alunos em 6%, altere a tabela.​ */
+UPDATE alunos SET mensalidade = mensalidade * 1.06;
