@@ -1,20 +1,20 @@
 Exercícios de Revisão de SQL
 
-Atenção: 
+Atenção:
 * Anote todos os SQL's em um editor de textos (ou bloco de notas)
 * TODOS os itens abaixo, devem ser feito usando o SQL.
 
 1. Crie uma tabela chamada "Funcionários" com os campos:
-"ID_Funcionário" (identificação única), 
+"ID_Funcionário" (identificação única),
 "Nome" (nome do funcionário),
-"Data_de_Nascimento" (data de nascimento do funcionário),  
-"Cargo" (cargo do funcionário), 
-"Salário" (salário do funcionário), 
+"Data_de_Nascimento" (data de nascimento do funcionário),
+"Cargo" (cargo do funcionário),
+"Salário" (salário do funcionário),
 "Data_de_Admissão" (data de admissão do funcionário),
-"Data_de_Demissão" (data de demissão do funcionário),  
+"Data_de_Demissão" (data de demissão do funcionário),
 "Departamento" (departamento em que o funcionário trabalha).
 
---> Data : dt_niver date; 
+--> Data : dt_niver date;
 
 2. Insira registros na tabela Funcionários.
 
@@ -42,14 +42,14 @@ select Nome
 from funcionario
 where salario = (select max(salario) from funcionario);
 
-o) Selecione o funcionario com o menor salario da empresa
+o) Selecione o nome, departamento e salario do funcionario com o menor salario da empresa
 
 10. Projeção:
 
 select nome, salario * 1.15 AS "Salário com aumento de 15%"
 from funcionario;
 
-p) selecione uma projeção de quanto seria o PPR(participação de resultados) de todos os funcionarios se fechar em 2.8 salario
+p) selecione uma projeção com nome, salario e Valor de quanto seria o PPR(participação de resultados) de todos os funcionarios se fechar em 2.8 salario
 
 11. Data de Hoje:
 

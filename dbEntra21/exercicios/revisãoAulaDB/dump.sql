@@ -125,3 +125,12 @@ SELECT nome, departamento, salario
 FROM funcionario
 WHERE salario = (SELECT MIN(salario) FROM funcionario);
 
+/* p) */
+SELECT nome, salario, salario * 2.8 AS "PPR 2023 2.8x" FROM funcionario;
+
+/* q) */
+UPDATE funcionario SET dt_demissao = CURRENT_DATE
+WHERE id_funcionario = 5;
+
+UPDATE funcionario SET dt_demissao = CURRENT_DATE
+WHERE id_funcionario IN (30, 28, 14, 21);
